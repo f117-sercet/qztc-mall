@@ -10,6 +10,34 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Mall-admin</artifactId>
-
-
+<dependencies>
+    <dependency>
+        <groupId>org.com.soho.bean.mall</groupId>
+        <artifactId>Mall-mbg</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.com.soho.bean.mall</groupId>
+        <artifactId>Mall-security</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.aliyun.oss</groupId>
+        <artifactId>aliyun-sdk-oss</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>net.logstash.logback</groupId>
+        <artifactId>logstash-logback-encoder</artifactId>
+    </dependency>
+    <dependency>
+    <groupId>io.minio</groupId>
+    <artifactId>minio</artifactId>
+    </dependency>
+</dependencies>
+    <build>
+    <plugins>
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+    </plugin>
+    </plugins>
+    </build>
 </project>
