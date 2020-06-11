@@ -7,6 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -53,6 +60,8 @@
       <workItem from="1591607252690" duration="519000" />
       <workItem from="1591687459577" duration="3172000" />
       <workItem from="1591792591390" duration="1081000" />
+      <workItem from="1591885605732" duration="60000" />
+      <workItem from="1591885689738" duration="424000" />
     </task>
     <servers />
   </component>
@@ -60,10 +69,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1591687469025">
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1591885689413">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1591687469025" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1591885689413" />
     <state x="178" y="107" key="new project wizard" timestamp="1591607732639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
