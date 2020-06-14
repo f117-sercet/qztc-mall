@@ -146,5 +146,4 @@
             <version>${minio.version}</version>
         </dependency>
     </dependencies>
-
 </project>
