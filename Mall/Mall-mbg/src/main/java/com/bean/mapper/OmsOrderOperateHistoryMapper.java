@@ -1,10 +1,8 @@
 package com.bean.mapper;
 
-
-import java.util.List;
-
 import com.bean.model.OmsOrderOperateHistory;
 import com.bean.model.OmsOrderOperateHistoryExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface OmsOrderOperateHistoryMapper {

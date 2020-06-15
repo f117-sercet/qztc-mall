@@ -1,9 +1,8 @@
 package com.bean.mapper;
 
-import java.util.List;
-
 import com.bean.model.PmsComment;
 import com.bean.model.PmsCommentExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface PmsCommentMapper {

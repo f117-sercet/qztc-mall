@@ -1,9 +1,8 @@
 package com.bean.mapper;
 
-import java.util.List;
-
 import com.bean.model.PmsAlbumPic;
 import com.bean.model.PmsAlbumPicExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface PmsAlbumPicMapper {

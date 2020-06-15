@@ -1,10 +1,8 @@
 package com.bean.mapper;
 
-
-import java.util.List;
-
 import com.bean.model.SmsFlashPromotion;
 import com.bean.model.SmsFlashPromotionExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface SmsFlashPromotionMapper {

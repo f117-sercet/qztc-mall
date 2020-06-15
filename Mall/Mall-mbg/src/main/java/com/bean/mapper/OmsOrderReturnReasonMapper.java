@@ -1,9 +1,8 @@
 package com.bean.mapper;
 
-import java.util.List;
-
 import com.bean.model.OmsOrderReturnReason;
 import com.bean.model.OmsOrderReturnReasonExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface OmsOrderReturnReasonMapper {

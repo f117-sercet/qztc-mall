@@ -1,11 +1,9 @@
 package com.bean.mapper;
 
-
 import com.bean.model.CmsMemberReport;
 import com.bean.model.CmsMemberReportExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface CmsMemberReportMapper {
     long countByExample(CmsMemberReportExample example);

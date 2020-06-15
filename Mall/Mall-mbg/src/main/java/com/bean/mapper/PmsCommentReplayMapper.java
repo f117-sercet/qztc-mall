@@ -1,10 +1,8 @@
 package com.bean.mapper;
 
-
-import java.util.List;
-
 import com.bean.model.PmsCommentReplay;
 import com.bean.model.PmsCommentReplayExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface PmsCommentReplayMapper {

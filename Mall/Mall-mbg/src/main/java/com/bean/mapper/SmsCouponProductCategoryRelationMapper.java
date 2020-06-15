@@ -1,10 +1,8 @@
 package com.bean.mapper;
 
-
-import java.util.List;
-
 import com.bean.model.SmsCouponProductCategoryRelation;
 import com.bean.model.SmsCouponProductCategoryRelationExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface SmsCouponProductCategoryRelationMapper {

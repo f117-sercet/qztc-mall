@@ -1,10 +1,8 @@
 package com.bean.mapper;
 
-
-import java.util.List;
-
 import com.bean.model.CmsTopic;
 import com.bean.model.CmsTopicExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface CmsTopicMapper {

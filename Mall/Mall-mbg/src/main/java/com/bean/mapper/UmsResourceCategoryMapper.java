@@ -1,10 +1,8 @@
 package com.bean.mapper;
 
-;
-import java.util.List;
-
 import com.bean.model.UmsResourceCategory;
 import com.bean.model.UmsResourceCategoryExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface UmsResourceCategoryMapper {

@@ -1,10 +1,8 @@
 package com.bean.mapper;
 
-
-import java.util.List;
-
 import com.bean.model.UmsAdminLoginLog;
 import com.bean.model.UmsAdminLoginLogExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface UmsAdminLoginLogMapper {

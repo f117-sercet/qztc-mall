@@ -1,10 +1,8 @@
 package com.bean.mapper;
 
-
-import java.util.List;
-
 import com.bean.model.UmsMember;
 import com.bean.model.UmsMemberExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface UmsMemberMapper {

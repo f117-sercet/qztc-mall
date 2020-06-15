@@ -1,11 +1,9 @@
 package com.bean.mapper;
 
-
 import com.bean.model.CmsPrefrenceAreaProductRelation;
 import com.bean.model.CmsPrefrenceAreaProductRelationExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface CmsPrefrenceAreaProductRelationMapper {
     long countByExample(CmsPrefrenceAreaProductRelationExample example);

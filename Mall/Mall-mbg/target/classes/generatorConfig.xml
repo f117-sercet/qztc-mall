@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <properties resource="generator.properties"/>
+    <properties resource="gengerator.properties"/>
     <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
@@ -30,11 +30,11 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.bean.mall.model" targetProject="Mall-mbg\src\main\java"/>
+        <javaModelGenerator targetPackage="com.bean.model" targetProject="Mall-mbg\src\main\java"/>
 
-        <sqlMapGenerator targetPackage="com.bean.mall.mapper" targetProject="Mall-mbg\src\main\resources"/>
+        <sqlMapGenerator targetPackage="com.bean.mapper" targetProject="Mall-mbg\src\main\resources"/>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bean.mall.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bean.mapper"
                              targetProject="Mall-mbg\src\main\java"/>
         <!--生成全部表tableName设为%-->
         <table tableName="%">

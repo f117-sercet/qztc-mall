@@ -2,7 +2,6 @@ package com.bean.mapper;
 
 import com.bean.model.UmsPermission;
 import com.bean.model.UmsPermissionExample;
-
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

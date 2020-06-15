@@ -1,10 +1,8 @@
 package com.bean.mapper;
 
-
-import java.util.List;
-
 import com.bean.model.PmsProductCategoryAttributeRelation;
 import com.bean.model.PmsProductCategoryAttributeRelationExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface PmsProductCategoryAttributeRelationMapper {
