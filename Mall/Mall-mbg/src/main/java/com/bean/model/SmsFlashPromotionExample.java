@@ -595,4 +595,5 @@ public class SmsFlashPromotionExample {
             this(condition, value, secondValue, null);
         }
     }
+
 }

@@ -5,11 +5,13 @@ import com.bean.mall.portal.domain.FlashPromotionProduct;
 import com.bean.mall.portal.domain.HomeContentResult;
 import com.bean.mall.portal.domain.HomeFlashPromotion;
 import com.bean.mall.portal.service.HomeService;
+import com.bean.mall.portal.util.DateUtil;
 import com.bean.mapper.*;
 import com.bean.model.*;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -95,17 +97,25 @@ public class HomeServiceImpl implements HomeService {
         int offset = pageSize * (pageNum - 1);
         return homeDao.getNewProductList(offset, pageSize);
     }
+    private List<SmsHomeAdvertise> getHomeAdvertiseList() {
+        SmsHomeAdvertiseExample example = new SmsHomeAdvertiseExample();
+        example.createCriteria().andTypeEqualTo(1).andStatusEqualTo(1);
+        example.setOrderByClause("sort desc");
+        return advertiseMapper.selectByExample(example);
+    }
+
+
     private HomeFlashPromotion getHomeFlashPromotion(){
         HomeFlashPromotion homeFlashPromotion = new HomeFlashPromotion();
         //获取当前秒杀活动
         Date now = new Date();
-        SmsFlashPromotion flashPromotion = getFlashPromotion(now);
+        SmsFlashPromotionSession flashPromotion = getFlashPromotion(now);
         if (flashPromotion != null) {
             //获取当前秒杀场次
-            SmsFlashPromotionSession flashPromotionSession = getFlashPromotionSession(now);
+            SmsFlashPromotion flashPromotionSession = getFlashPromotionSession(now);
             if (flashPromotionSession != null) {
-                homeFlashPromotion.setStartTime(flashPromotionSession.getStartTime());
-                homeFlashPromotion.setEndTime(flashPromotionSession.getEndTime());
+                homeFlashPromotion.setStartTime(flashPromotionSession.getStartDate());
+                homeFlashPromotion.setEndTime(flashPromotionSession.getEndDate());
                 //获取下一个秒杀场次
                 SmsFlashPromotionSession nextSession = getNextFlashPromotionSession(homeFlashPromotion.getStartTime());
                 if(nextSession!=null){
@@ -113,12 +123,64 @@ public class HomeServiceImpl implements HomeService {
                     homeFlashPromotion.setNextEndTime(nextSession.getEndTime());
                 }
                 //获取秒杀商品
-                List<aFlashPromotionProduct> flashProductList = homeDao.getFlashProductList(flashPromotion.getId(), flashPromotionSession.getId());
+                List<FlashPromotionProduct> flashProductList = homeDao.getFlashProductList(flashPromotion.getId(), flashPromotionSession.getId());
                 homeFlashPromotion.setProductList(flashProductList);
             }
         }
         return homeFlashPromotion;
     }
 
-}
+    private SmsFlashPromotionSession getNextFlashPromotionSession(Date date) {
+
+            SmsFlashPromotionSessionExample sessionExample = new SmsFlashPromotionSessionExample();
+            sessionExample.createCriteria()
+                    .andStartTimeGreaterThan(date);
+            sessionExample.setOrderByClause("start_time asc");
+            List<SmsFlashPromotionSession> promotionSessionList = promotionSessionMapper.selectByExample(sessionExample);
+            if (!CollectionUtils.isEmpty(promotionSessionList)) {
+                return promotionSessionList.get(0);
+            }
+            return null;
+        }
+
+
+    /**
+     * 更具时间获取秒杀活动
+     * @param date
+     * @return
+     */
+    private SmsFlashPromotion getFlashPromotionSession(Date date) {
+        Date currentDate = DateUtil.getDate(date);
+        SmsFlashPromotionExample example = new SmsFlashPromotionExample();
+        example.createCriteria()
+                .andStatusEqualTo(1)
+                .andStartDateLessThanOrEqualTo(currentDate)
+                .andEndDateGreaterThanOrEqualTo(currentDate);
+        List<SmsFlashPromotion> flashPromotionList = flashPromotionMapper.selectByExample(example);
+        if (!CollectionUtils.isEmpty(flashPromotionList)) {
+            return flashPromotionList.get(0);
+        }
+        return null;
+    }
+
+    /**
+     * 根据时间获取秒杀场次
+     * @param date
+     * @return
+     */
+    private SmsFlashPromotionSession getFlashPromotion(Date date) {
+        Date currentTime= DateUtil.getTime(date);
+        SmsFlashPromotionSessionExample sessionExample =new SmsFlashPromotionSessionExample();
+        sessionExample.createCriteria().andStartTimeLessThanOrEqualTo(currentTime)
+                .andEndTimeGreaterThanOrEqualTo(currentTime);
+
+        List<SmsFlashPromotionSession> promotionSessionList = promotionSessionMapper.selectByExample(sessionExample);
+        if (!CollectionUtils.isEmpty(promotionSessionList)) {
+            return  promotionSessionList.get(0);
+        }
+        return null;
+    }
+    }
+
+
 
