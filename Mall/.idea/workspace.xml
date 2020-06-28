@@ -26,19 +26,14 @@
         <option name="workOffline" value="true" />
       </MavenGeneralSettings>
     </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProjectId" id="1d1zBHrveM5SicmSIa2QzOhFPI6" />
   <component name="ProjectViewState">
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -53,7 +48,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="leetcode.id" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -65,7 +60,7 @@
       <recent name="F:\java\java idea\Mall\Mall-mbg\src\main\java\com\bean\model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Generator">
     <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bean.mall.Generator" />
       <module name="Mall-mbg" />
@@ -104,6 +99,20 @@
         </option>
       </MavenSettings>
       <method v="2" />
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Mall-portal" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bean.mall.portal.application.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Mall-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bean.mall.adminApplication.MallAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
@@ -147,11 +156,21 @@
       <workItem from="1592645433596" duration="6344000" />
       <workItem from="1592789910693" duration="957000" />
       <workItem from="1593094743228" duration="815000" />
+      <workItem from="1593135939115" duration="28000" />
+      <workItem from="1593136250213" duration="87000" />
+      <workItem from="1593136357261" duration="105000" />
+      <workItem from="1593136482737" duration="135000" />
+      <workItem from="1593138274437" duration="78000" />
+      <workItem from="1593334962782" duration="308000" />
+      <workItem from="1593335294019" duration="34000" />
+      <workItem from="1593336282976" duration="40000" />
+      <workItem from="1593345618054" duration="745000" />
+      <workItem from="1593347852662" duration="2488000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Project_Structure" timestamp="1592645672646">
@@ -190,14 +209,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592205731845" />
-    <state x="270" y="54" key="SettingsEditor" timestamp="1592054652940">
+    <state x="270" y="54" key="SettingsEditor" timestamp="1593345758124">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592054652940" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1593095196759">
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593345758124" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1593138281276">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1593095196759" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1593138281276" />
     <state x="804" y="105" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1592529204473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -210,6 +229,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="178" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1592204569646" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1593350543949">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1593350543949" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

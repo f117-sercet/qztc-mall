@@ -1,5 +1,6 @@
 package com.bean.mall.portal.controller;
 
+import com.bean.mall.common.api.CommonResult;
 import com.bean.mall.portal.domain.HomeContentResult;
 import com.bean.mall.portal.service.HomeService;
 import io.swagger.annotations.Api;
@@ -22,7 +23,7 @@ public class HomeController {
     @ApiOperation("首页内容页信息展示")
     @RequestMapping(value = "/content", method = RequestMethod.GET)
     @ResponseBody
-    public  CommonResult<HomeContentResult>  content(){
+    public CommonResult<HomeContentResult> content(){
 
     }
 

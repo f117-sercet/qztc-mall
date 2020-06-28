@@ -1,9 +1,11 @@
 package com.bean.mall.portal.service.impl;
 
+import com.alibaba.druid.sql.visitor.functions.If;
 import com.bean.mall.portal.domain.MemberBrandAttention;
 import com.bean.mall.portal.repository.MemberBrandAttentionRepository;
 import com.bean.mall.portal.service.MemberAttentionService;
 import com.bean.mall.portal.service.UmsMemberService;
+import com.bean.model.UmsMember;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
@@ -19,7 +21,17 @@ public class MemberAttentionServiceImpl implements MemberAttentionService {
     private UmsMemberService memberService;
     @Override
     public int add(MemberBrandAttention memberBrandAttention) {
-        return 0;
+        int count=0;
+        UmsMember member =memberService.getCurrentMember();
+        memberBrandAttention.setMemberId(member.getId());
+        memberBrandAttention.setMemberNickname(member.getNickname());
+        MemberBrandAttention findAttention=memberBrandAttentionRepository.findByMemberIdAndBrandId(memberBrandAttention.getMemberId(), memberBrandAttention.getBrandId());
+        if (findAttention == null) {
+            memberBrandAttentionRepository.save(memberBrandAttention);
+            count=-1;
+
+        }
+        return  count;
     }
 
     @Override

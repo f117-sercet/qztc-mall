@@ -12,7 +12,7 @@ public class DateUtil {
      * 从Date类型的事件中提取日期部分
      */
 
-    public static Date getDate(Date date){
+      public static Date getDate(Date date){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.set(Calendar.HOUR_OF_DAY,0);
