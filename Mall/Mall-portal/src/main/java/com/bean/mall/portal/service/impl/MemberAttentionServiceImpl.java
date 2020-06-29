@@ -8,6 +8,8 @@ import com.bean.mall.portal.service.UmsMemberService;
 import com.bean.model.UmsMember;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -36,11 +38,14 @@ public class MemberAttentionServiceImpl implements MemberAttentionService {
 
     @Override
     public int delete(Long brandId) {
-        return 0;
+        UmsMember member = memberService.getCurrentMember();
+        return memberBrandAttentionRepository.deleteByMemberIdAndBrandId(member.getId(),brandId);
     }
 
     @Override
     public Page<MemberBrandAttention> list(Integer pageNum, Integer pageSize) {
-        return null;
+        UmsMember member = memberService.getCurrentMember();
+        Pageable pageable = PageRequest.of(pageNum-1,pageSize);
+        return memberBrandAttentionRepository.findByMemberId(member.getId(),pageable);
     }
 }
