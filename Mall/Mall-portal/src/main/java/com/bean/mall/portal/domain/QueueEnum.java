@@ -1,8 +1,11 @@
 package com.bean.mall.portal.domain;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+
 /**
  * 消息队列枚举配置
  */
+
 public enum  QueueEnum {
     /**
      * 消息通知队列
@@ -30,5 +33,18 @@ public enum  QueueEnum {
         this.exchange = exchange;
         this.name = name;
         this.routeKey = routeKey;
+
+    }
+
+    public String getExchange() {
+        return exchange;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getRouteKey() {
+        return routeKey;
     }
 }
