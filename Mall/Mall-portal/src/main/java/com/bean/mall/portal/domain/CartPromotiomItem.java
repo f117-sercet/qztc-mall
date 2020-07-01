@@ -1,11 +1,13 @@
 package com.bean.mall.portal.domain;
 
+import com.bean.model.OmsCartItem;
+
 import java.math.BigDecimal;
 
 /**
  * 购物车中促销信息的封装
  */
-public class CartPromotiomItem {
+public class CartPromotiomItem extends OmsCartItem {
     //促销活动信息
 
     private String  promotionMessage;

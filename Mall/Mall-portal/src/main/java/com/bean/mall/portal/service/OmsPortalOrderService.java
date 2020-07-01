@@ -1,5 +1,6 @@
 package com.bean.mall.portal.service;
 
+import com.bean.mall.common.api.CommonPage;
 import com.bean.mall.portal.domain.ConfirmOrderResult;
 import com.bean.mall.portal.domain.OmsOrderDetail;
 import com.bean.mall.portal.domain.OrderParam;
@@ -59,8 +60,9 @@ public interface OmsPortalOrderService {
 
     /**
      * 分页获取用户订单
+     * @return
      */
-    CommonPage <OmsOrderDetail>list(Integer status, Integer pageNum, Integer pageSize);
+    CommonPage<OmsOrderDetail> list(Integer status, Integer pageNum, Integer pageSize);
 
     /**
      * 根据订单ID获取订单详情

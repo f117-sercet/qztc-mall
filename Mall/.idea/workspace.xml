@@ -52,13 +52,13 @@
     <property name="settings.editor.selected.configurable" value="leetcode.id" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.bean.mall.portal.domain" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\java\java idea\Mall\Mall-mbg\src\main\resources\com\bean\mall\mapper" />
       <recent name="F:\java\java idea\Mall\Mall-mbg\src\main\java\com\bean\mapper" />
       <recent name="F:\java\java idea\Mall\Mall-mbg\src\main\java\com\bean\model" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bean.mall.portal.domain" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Generator">
@@ -169,6 +169,7 @@
       <workItem from="1593347852662" duration="2488000" />
       <workItem from="1593402942889" duration="816000" />
       <workItem from="1593481933378" duration="4346000" />
+      <workItem from="1593564833157" duration="11625000" />
     </task>
     <servers />
   </component>
@@ -184,10 +185,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="46" width="1089" height="778" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1592054414461" />
-    <state x="860" y="193" key="#com.intellij.ide.util.MemberChooser" timestamp="1593497929285">
+    <state x="860" y="193" key="#com.intellij.ide.util.MemberChooser" timestamp="1593592179769">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="860" y="193" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593497929285" />
+    <state x="860" y="193" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593592179769" />
     <state x="542" y="271" width="452" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592142298756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
