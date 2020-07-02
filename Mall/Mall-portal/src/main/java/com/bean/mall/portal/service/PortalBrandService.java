@@ -1,5 +1,6 @@
 package com.bean.mall.portal.service;
 
+import com.bean.mall.common.api.CommonPage;
 import com.bean.model.PmsBrand;
 import com.bean.model.PmsProduct;
 

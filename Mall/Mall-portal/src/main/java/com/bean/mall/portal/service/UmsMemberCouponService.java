@@ -2,6 +2,7 @@ package com.bean.mall.portal.service;
 
 import com.bean.mall.portal.domain.CartPromotiomItem;
 import com.bean.mall.portal.domain.SmsCouponHistoryDetail;
+import com.bean.model.SmsCoupon;
 import com.bean.model.SmsCouponHistory;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +23,16 @@ public interface UmsMemberCouponService {
      * @param userStatus 优惠券的使用状态
      * @return
      */
-    List<SmsCouponHistoryDetail> list(Integer userStatus);
+    List<SmsCouponHistory> list(Integer userStatus);
 
     List<SmsCouponHistoryDetail> list(List<CartPromotiomItem> cartPromotiomItems,Integer type);
+    /**
+     * 获取当前商品相关优惠券
+     */
+    List<SmsCoupon> listByProduct(Long productId);
+
+    /**
+     * 获取用户优惠券列表
+     */
+    List<SmsCoupon> listHistory(Integer userStatus);
 }
