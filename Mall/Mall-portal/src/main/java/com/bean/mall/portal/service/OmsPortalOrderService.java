@@ -74,5 +74,11 @@ public interface OmsPortalOrderService {
      */
     void deleteOrder(Long orderId);
 
+    /**
+     * 支付成功后的回调
+     */
+    @Transactional
+    Integer paySuccess(Long orderId, Integer payType);
+
 
 }

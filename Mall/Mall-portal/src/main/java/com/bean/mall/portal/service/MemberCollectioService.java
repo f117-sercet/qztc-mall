@@ -7,9 +7,11 @@ import org.springframework.data.domain.Page;
  * 会员收藏Service
  */
 public interface MemberCollectioService {
-    int add(MemberProductCollection productCollection);
-
     int delete(Long productId);
-
+    int add(MemberProductCollection productCollection);
     Page<MemberProductCollection> list(Integer pageNum, Integer pageSize);
+
+    MemberProductCollection detail(Long productId);
+
+    void clear();
 }

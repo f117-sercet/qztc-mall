@@ -15,7 +15,7 @@ public interface OmsCartItemService {
      * 查询购物车是否包含该商品，有增加数量，五添加到购物车
      */
     @Transactional
-    int addOr(OmsCartItem omsCartItem);
+    int add(OmsCartItem omsCartItem);
 
     /**
      * 根据会员编号获取购物车列表
