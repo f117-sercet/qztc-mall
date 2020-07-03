@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mall-mbg/src/main/resources/com/bean/mall/mapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mall-portal/src/main/resources/dao" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,13 +52,14 @@
     <property name="settings.editor.selected.configurable" value="leetcode.id" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bean.mall.portal.domain" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\java\java idea\Mall\Mall-portal\src\main\resources\dao" />
       <recent name="F:\java\java idea\Mall\Mall-mbg\src\main\resources\com\bean\mall\mapper" />
       <recent name="F:\java\java idea\Mall\Mall-mbg\src\main\java\com\bean\mapper" />
       <recent name="F:\java\java idea\Mall\Mall-mbg\src\main\java\com\bean\model" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.bean.mall.portal.domain" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Generator">
@@ -173,6 +174,7 @@
       <workItem from="1593655433138" duration="7920000" />
       <workItem from="1593677431231" duration="12000" />
       <workItem from="1593738425775" duration="4595000" />
+      <workItem from="1593745119155" duration="2146000" />
     </task>
     <servers />
   </component>
