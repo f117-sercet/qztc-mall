@@ -1,10 +1,16 @@
 package com.bean.mall.dao;
 
+import com.bean.mall.dto.OmsOrderDeliveryParam;
+import com.bean.mall.dto.OmsOrderDetail;
+import com.bean.mall.dto.OmsOrderQueryParam;
 import com.bean.model.OmsOrder;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * 订单自定义查询Dao
+ *
  */
 public interface OmsOrderDao {
     /**

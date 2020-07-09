@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mall-security/src/main/java/com/bean/mall/security/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mall-admin/src/main/java/com/bean/mall/dto" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -47,24 +47,31 @@
     <property name="nodejs.mocha.mocha_node_package_dir" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\java\java idea\Mall\Mall-search\src\main\resources\dao" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\dto" />
+      <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\dao" />
+      <recent name="F:\java\java idea\Mall\Mall-demo\src\main\java" />
+      <recent name="F:\java\java idea\Mall\Mall-demo\src\main\resources" />
+      <recent name="F:\java\java idea\Mall\Mall-security\src\main\java\com\bean\mall\security\config" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.bean.mall.portal.domain" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\java\java idea\Mall\Mall-security\src\main\java\com\bean\mall\security\config" />
-      <recent name="F:\java\java idea\Mall\Mall-security\src\main\java\com\bean\mall\security\compoent" />
-      <recent name="F:\java\java idea\Mall\Mall-search\src\main\resources\dao" />
-      <recent name="F:\java\java idea\Mall\Mall-search\src\main\resources" />
-      <recent name="F:\java\java idea\Mall\Mall-portal\src\main\resources\dao" />
-    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Application.Generator">
     <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -190,6 +197,10 @@
       <workItem from="1594022912941" duration="1826000" />
       <workItem from="1594028254782" duration="658000" />
       <workItem from="1594102225577" duration="6275000" />
+      <workItem from="1594113879860" duration="13000" />
+      <workItem from="1594189310724" duration="1634000" />
+      <workItem from="1594195790613" duration="219000" />
+      <workItem from="1594278140756" duration="4247000" />
     </task>
     <servers />
   </component>
@@ -197,10 +208,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="0" key="#Project_Structure" timestamp="1593867750319">
+    <state x="361" y="0" key="#Project_Structure" timestamp="1594189606476">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1593867750319" />
+    <state x="361" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1594189606476" />
     <state x="223" y="46" width="1089" height="778" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592054414461">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -217,10 +228,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="542" y="271" width="452" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1592142298756" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1594024712415">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1594195990123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594024712415" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594195990123" />
     <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1592205731845">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -237,14 +248,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592205731845" />
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1594106048839">
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1594189748408">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1594106048839" />
-    <state x="408" y="116" key="NewModule_or_Project.wizard" timestamp="1594024740518">
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1594189748408" />
+    <state x="408" y="116" key="NewModule_or_Project.wizard" timestamp="1594196008905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="408" y="116" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1594024740518" />
+    <state x="408" y="116" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1594196008905" />
     <state x="270" y="54" key="SettingsEditor" timestamp="1594109518678">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -265,10 +276,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="166" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1592187056498" />
-    <state x="178" y="0" key="new project wizard" timestamp="1592204569646">
+    <state x="178" y="0" key="new project wizard" timestamp="1594195982434">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1592204569646" />
+    <state x="178" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1594195982434" />
+    <state x="470" y="168" key="refactoring.ChangeSignatureDialog" timestamp="1594190019413">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="470" y="168" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1594190019413" />
     <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1593738698914">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
