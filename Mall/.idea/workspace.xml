@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mall-admin/src/main/java/com/bean/mall/service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mall-admin/src/main/java/com/bean/mall/validator" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,18 +52,18 @@
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.bean.mall.portal.domain" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\java\java idea\Mall\Mall-search\src\main\resources\dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\validator" />
       <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\service" />
       <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\dto" />
       <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\dao" />
       <recent name="F:\java\java idea\Mall\Mall-demo\src\main\java" />
-      <recent name="F:\java\java idea\Mall\Mall-demo\src\main\resources" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\java\java idea\Mall\Mall-search\src\main\resources\dao" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bean.mall.portal.domain" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -202,6 +202,7 @@
       <workItem from="1594195790613" duration="219000" />
       <workItem from="1594278140756" duration="4247000" />
       <workItem from="1594371095159" duration="725000" />
+      <workItem from="1594471933816" duration="1633000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,7 @@
 package com.bean.mall.service;
 
-import com.macro.mall.model.SmsHomeBrand;
+
+import com.bean.model.SmsHomeBrand;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
