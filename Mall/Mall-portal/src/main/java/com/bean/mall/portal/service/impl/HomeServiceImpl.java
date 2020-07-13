@@ -39,6 +39,7 @@ public class HomeServiceImpl implements HomeService {
 
     @Override
     public HomeContentResult content() {
+
         HomeContentResult result=new HomeContentResult();
         //获取广告首页
         result.setAdvertiseList(getHomeAdvertiseList());

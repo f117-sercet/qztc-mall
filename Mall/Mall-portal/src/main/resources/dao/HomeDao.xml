@@ -16,12 +16,12 @@
         WHERE
             hb.recommend_status = 1
             AND b.show_status = 1
-        ORDER BY
+        ORDER BYf
             hb.sort DESC
         LIMIT #{offset}, #{limit}
     </select>
 
-    <select id="getFlashProductList" resultMap="flashPromotionProduct">
+    <select id="getFlashProductList" resultMap="lashPromotionProduct">
         SELECT
             pr.flash_promotion_price,
             pr.flash_promotion_count,
