@@ -1,5 +1,6 @@
 package com.bean.mall.service.impl;
 
+
 import com.bean.mall.service.CmsPrefrenceAreaService;
 import com.bean.mapper.CmsPrefrenceAreaMapper;
 import com.bean.model.CmsPrefrenceArea;
@@ -11,13 +12,15 @@ import java.util.List;
 
 /**
  * 商品优选Service实现类
+ *
  */
 @Service
 public class CmsPrefrenceAreaServiceImpl implements CmsPrefrenceAreaService {
     @Autowired
-    private CmsPrefrenceAreaMapper PrefrenceAreaMapper;
+    private CmsPrefrenceAreaMapper prefrenceAreaMapper;
+
     @Override
     public List<CmsPrefrenceArea> listAll() {
-        return PrefrenceAreaMapper.selectByExample(new CmsPrefrenceAreaExample());
+        return prefrenceAreaMapper.selectByExample(new CmsPrefrenceAreaExample());
     }
 }

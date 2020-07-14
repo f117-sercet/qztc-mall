@@ -12,7 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/** PmsProductAttributeCategoryService实现类
+/**
+ * PmsProductAttributeCategoryService实现类
  *
  */
 @Service
@@ -56,4 +57,5 @@ public class PmsProductAttributeCategoryServiceImpl implements PmsProductAttribu
     @Override
     public List<PmsProductAttributeCategoryItem> getListWithAttr() {
         return productAttributeCategoryDao.getListWithAttr();
-    }}
+    }
+}

@@ -6,13 +6,16 @@ import com.bean.model.OmsOrderReturnReason;
 import com.bean.model.OmsOrderReturnReasonExample;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
 /**
- * 订单原因管理实现类Service
+ * 订单原因管理Service实现类
+ *
  */
+@Service
 public class OmsOrderReturnReasonServiceImpl implements OmsOrderReturnReasonService {
     @Autowired
     private OmsOrderReturnReasonMapper returnReasonMapper;

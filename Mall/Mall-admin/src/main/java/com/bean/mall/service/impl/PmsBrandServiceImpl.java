@@ -1,6 +1,5 @@
 package com.bean.mall.service.impl;
 
-
 import com.bean.mall.dto.PmsBrandParam;
 import com.bean.mall.service.PmsBrandService;
 import com.bean.mapper.PmsBrandMapper;

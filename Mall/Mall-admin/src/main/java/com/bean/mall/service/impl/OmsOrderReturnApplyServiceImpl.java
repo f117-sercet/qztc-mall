@@ -8,22 +8,26 @@ import com.bean.mall.service.OmsOrderReturnApplyService;
 import com.bean.mapper.OmsOrderReturnApplyMapper;
 import com.bean.model.OmsOrderReturnApply;
 import com.bean.model.OmsOrderReturnApplyExample;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
 /**
  * 订单退货管理Service
+ *
  */
-
+@Service
 public class OmsOrderReturnApplyServiceImpl implements OmsOrderReturnApplyService {
-   @Autowired
+    @Autowired
     private OmsOrderReturnApplyDao returnApplyDao;
     @Autowired
     private OmsOrderReturnApplyMapper returnApplyMapper;
     @Override
     public List<OmsOrderReturnApply> list(OmsReturnApplyQueryParam queryParam, Integer pageSize, Integer pageNum) {
+        PageHelper.startPage(pageNum,pageSize);
         return returnApplyDao.getList(queryParam);
     }
 

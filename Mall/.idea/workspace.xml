@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mall-admin/src/main/java/com/bean/mall/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mall-admin/src/main/java/com/bean/mall/controller" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -49,21 +49,21 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="spring.boot" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.bean.mall.portal.domain" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\java\java idea\Mall\Mall-search\src\main\resources\dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\controller" />
+      <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\service\impl" />
       <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\config" />
       <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\component" />
       <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\validator" />
-      <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\service" />
-      <recent name="F:\java\java idea\Mall\Mall-admin\src\main\java\com\bean\mall\dto" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\java\java idea\Mall\Mall-search\src\main\resources\dao" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bean.mall.portal.domain" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -209,6 +209,8 @@
       <workItem from="1594606347225" duration="3362000" />
       <workItem from="1594617834019" duration="600000" />
       <workItem from="1594619038441" duration="2822000" />
+      <workItem from="1594697609013" duration="92000" />
+      <workItem from="1594700367377" duration="7597000" />
     </task>
     <servers />
   </component>
@@ -256,6 +258,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592205731845" />
+    <state x="349" y="147" key="IDE.errors.dialog" timestamp="1594704359250">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="147" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1594704359250" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1594189748408">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -264,10 +270,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="408" y="116" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1594196008905" />
-    <state x="270" y="54" key="SettingsEditor" timestamp="1594109518678">
+    <state x="270" y="0" key="SettingsEditor" timestamp="1594710682959">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594109518678" />
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594710682959" />
     <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1593138281276">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

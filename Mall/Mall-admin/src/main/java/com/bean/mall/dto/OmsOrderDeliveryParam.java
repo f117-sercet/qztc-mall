@@ -17,4 +17,5 @@ public class OmsOrderDeliveryParam {
     private String deliveryCompany;
     @ApiModelProperty("物流单号")
     private String deliverySn;
+
 }
