@@ -52,12 +52,12 @@
           </div>
         </el-col>
         <!--<el-col :span="6">-->
-        <!--<div class="total-frame">-->
-        <!--<svg-icon icon-class="total-week" class="total-icon">-->
-        <!--</svg-icon>-->
-        <!--<div class="total-title">近7天销售总额</div>-->
-        <!--<div class="total-value">￥50000.00</div>-->
-        <!--</div>-->
+          <!--<div class="total-frame">-->
+            <!--<svg-icon icon-class="total-week" class="total-icon">-->
+            <!--</svg-icon>-->
+            <!--<div class="total-title">近7天销售总额</div>-->
+            <!--<div class="total-value">￥50000.00</div>-->
+          <!--</div>-->
         <!--</el-col>-->
       </el-row>
     </div>
@@ -303,7 +303,7 @@
           xAxisType: 'time',
           area:true,
           axisSite: { right: ['orderAmount']},
-          labelMap: {'orderCount': '订单数量', 'orderAmount': '订单金额'}},
+        labelMap: {'orderCount': '订单数量', 'orderAmount': '订单金额'}},
         chartData: {
           columns: [],
           rows: []
