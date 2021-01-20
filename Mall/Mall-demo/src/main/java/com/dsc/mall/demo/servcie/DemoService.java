@@ -14,7 +14,7 @@ public interface DemoService {
      * 查询所有
      * @return
      */
-    List<PmsBrand> listAllBrands();
+    List<PmsBrand> listAllBrand();
 
     /**
      *  创建新品牌

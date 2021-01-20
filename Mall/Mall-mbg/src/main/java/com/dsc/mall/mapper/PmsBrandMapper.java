@@ -3,6 +3,8 @@ package com.dsc.mall.mapper;
 import com.dsc.mall.model.PmsBrand;
 import com.dsc.mall.model.PmsBrandExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 public interface PmsBrandMapper {

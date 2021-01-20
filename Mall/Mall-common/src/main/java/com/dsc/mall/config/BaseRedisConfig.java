@@ -24,7 +24,6 @@ import java.time.Duration;
  * Redis基础配置
  * @author 60221
  */
-@Configuration
 public class BaseRedisConfig {
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
@@ -67,4 +66,4 @@ public class BaseRedisConfig {
     }
 
     }
-}
+
