@@ -10,6 +10,7 @@ import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.List;
  * @author 60221
  * Swagger基础配置
  */
-
+@EnableSwagger2
 public abstract class BaseSwaggerConfig {
 
     @Bean
@@ -27,7 +28,7 @@ public abstract class BaseSwaggerConfig {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo(swaggerProperties))
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(swaggerProperties.getApiBasePackage()))
+                .apis(RequestHandlerSelectors.basePackage("com.dsc.mall.demo.controller"))
                 .paths(PathSelectors.any())
                 .build();
         if (swaggerProperties.isEnableSecurity()) {
