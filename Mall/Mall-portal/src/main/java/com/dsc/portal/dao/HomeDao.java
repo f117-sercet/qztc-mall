@@ -3,6 +3,7 @@ package com.dsc.portal.dao;
 import com.dsc.mall.model.CmsSubject;
 import com.dsc.mall.model.PmsBrand;
 import com.dsc.mall.model.PmsProduct;
+import com.dsc.portal.domain.FlashPromotionProduct;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -14,11 +15,15 @@ import java.util.List;
 public interface HomeDao {
     /**
      * 获取推荐品牌
+     * @param limit
+     * @param offset
+     * @return
      */
     List<PmsBrand> getRecommendBrandList(@Param("offset") Integer offset,@Param("limit") Integer limit);
 
     /**
      * 获取秒杀商品
+     * @param flashPromotionId
      */
     List<FlashPromotionProduct> getFlashProductList(@Param("flashPromotionId") Long flashPromotionId, @Param("sessionId") Long sessionId);
 
@@ -37,4 +42,4 @@ public interface HomeDao {
     List<CmsSubject> getRecommendSubjectList(@Param("offset") Integer offset, @Param("limit") Integer limit);
 }
 
-}
+

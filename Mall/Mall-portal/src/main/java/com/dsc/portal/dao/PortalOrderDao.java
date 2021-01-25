@@ -1,6 +1,7 @@
 package com.dsc.portal.dao;
 
 import com.dsc.mall.model.OmsOrderItem;
+import com.dsc.portal.domain.OmsOrderDetail;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

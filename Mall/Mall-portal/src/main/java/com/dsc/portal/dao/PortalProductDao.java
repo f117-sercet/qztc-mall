@@ -2,6 +2,7 @@ package com.dsc.portal.dao;
 
 import com.dsc.mall.model.SmsCoupon;
 import com.dsc.portal.domain.CartProduct;
+import com.dsc.portal.domain.PromotionProduct;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
