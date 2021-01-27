@@ -25,7 +25,7 @@ public interface HomeService {
      * @param pageSize
      * @param pageNum
      */
-    List<PmsProductCategory> recommendProductList(Integer pageSize, Integer pageNum);
+    List<PmsProduct> recommendProductList(Integer pageSize, Integer pageNum);
 
     /**
      * 获取商品分类
