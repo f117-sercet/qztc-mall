@@ -1,6 +1,6 @@
 package com.dsc.portal.servcie;
 
-import com.dsc.portal.domain.MemberRedHistory;
+import com.dsc.portal.domain.MemberReadHistory;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public interface MemberReadHistoryService {
      * @param memberRedHistory
      * @return
      */
-    int create(MemberRedHistory memberRedHistory);
+    int create(MemberReadHistory memberRedHistory);
 
     /**
      * 批量删除用户浏览记录
@@ -30,7 +30,7 @@ public interface MemberReadHistoryService {
      * @param pageSize
      * @return
      */
-    Page<MemberRedHistory> List(Integer pageNum,Integer pageSize);
+    Page<MemberReadHistory> List(Integer pageNum, Integer pageSize);
 
     /**
      * 清空浏览记录

@@ -1,5 +1,7 @@
 package com.dsc.portal.domain;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,7 +13,7 @@ import java.util.Date;
  * @author 60221
  */
 @Document
-public class MemberRedHistory {
+public class MemberReadHistory {
 
     @Id
     private String id;
