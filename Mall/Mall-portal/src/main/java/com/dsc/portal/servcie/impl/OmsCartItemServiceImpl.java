@@ -12,6 +12,7 @@ import com.dsc.portal.servcie.OmsCartItemService;
 import com.dsc.portal.servcie.OmsPromotionService;
 import com.dsc.portal.servcie.UmsMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
  * 购物车管理Service实现类
  * @author 60221
  */
+@Service
 public class OmsCartItemServiceImpl implements OmsCartItemService {
 
     @Autowired
