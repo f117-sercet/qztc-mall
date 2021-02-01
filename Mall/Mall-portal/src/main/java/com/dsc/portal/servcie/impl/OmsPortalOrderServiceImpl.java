@@ -262,6 +262,20 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         return result;
     }
 
+    /**
+     * 判断下单商品是否有库存
+     * @param cartPromotionItemList
+     * @return
+     */
+    private boolean hashStock(List<CartPromotionItem> cartPromotionItemList) {
+        for(CartPromotionItem cartPromotionItem:cartPromotionItemList){
+            if (cartPromotionItem.getRealStock()==null||cartPromotionItem.getRealStock() <= 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     @Override
     public Integer paySuccsess(Long orderId, Integer payType) {
         //修改订单状态
@@ -471,5 +485,6 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         }
         cartItemService.delete(currentMember.getId(), ids);
     }
+
 }
 
