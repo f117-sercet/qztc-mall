@@ -115,7 +115,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         List<OmsOrderItem> orderItemList = new ArrayList<>();
         //获取购物车及优惠信息
         UmsMember currentMember = memberService.getCurrentMember();
-        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(currentMember.getId(),orderParam.getCartIds();
+        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(currentMember.getId(),orderParam.getCartIds());
         for (CartPromotionItem cartPromotionItem:cartPromotionItemList){
             //生成下单信息
             OmsOrderItem orderItem = new OmsOrderItem();
@@ -263,6 +263,69 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
     }
 
     /**
+     * 计算该订单赠送的成长值成长值
+     * @param orderItemList
+     * @return
+     */
+    private Integer calcGifGrowth(List<OmsOrderItem> orderItemList) {
+
+        Integer sum = 0;
+        for (OmsOrderItem orderItem:orderItemList){
+            sum = sum + orderItem.getGiftGrowth() * orderItem.getProductQuantity();
+        }
+        return sum;
+
+    }
+
+    /**
+     * 计算该订单赠送的积分
+     * @param orderItemList
+     * @return
+     */
+    private Integer calcGifIntegration(List<OmsOrderItem> orderItemList) {
+
+        int sum = 0;
+        for (OmsOrderItem orderItem:orderItemList){
+            sum += orderItem.getGiftIntegration()*orderItem.getProductQuantity();
+            return sum;
+        }
+
+    }
+
+    private BigDecimal calcPayAmount(OmsOrder omsOrder) {
+    }
+
+    private BigDecimal calcIntegrationAmount(List<OmsOrderItem> orderItemList) {
+    }
+
+    private BigDecimal calcCouponAmount(List<OmsOrderItem> orderItemList) {
+    }
+
+    private String getOrderPromotionInfo(List<OmsOrderItem> orderItemList) {
+    }
+
+    private BigDecimal calcPromotionAmount(List<OmsOrderItem> orderItemList) {
+    }
+
+    private void lockStock(List<CartPromotionItem> cartPromotionItemList) {
+    }
+
+    private BigDecimal getUseIntegrationAmount(Integer useIntegration, BigDecimal totalAmount, UmsMember currentMember, boolean b) {
+    }
+
+    private void handleRealAmount(List<OmsOrderItem> orderItemList) {
+    }
+
+    private BigDecimal calcTotalAmount(List<OmsOrderItem> orderItemList) {
+    }
+
+    private void handleCouponAmount(List<OmsOrderItem> orderItemList, SmsCouponHistoryDetail couponHistoryDetail) {
+    }
+
+    private SmsCouponHistoryDetail getUseCoupon(List<CartPromotionItem> cartPromotionItemList, Long couponId) {
+    }
+
+    /**
      * 判断下单商品是否有库存
      * @param cartPromotionItemList
      * @return
@@ -352,6 +415,9 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
                 memberService.updateIntegration(cancelOrder.getMemberId(), member.getIntegration() + cancelOrder.getUseIntegration());
             }
         }
+    }
+
+    private void updateCouponStatus(Long couponId, Long memberId, int i) {
     }
 
     @Override
