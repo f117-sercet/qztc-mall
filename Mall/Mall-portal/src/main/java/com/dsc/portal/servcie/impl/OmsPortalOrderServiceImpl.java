@@ -285,14 +285,28 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
     private Integer calcGifIntegration(List<OmsOrderItem> orderItemList) {
 
         int sum = 0;
-        for (OmsOrderItem orderItem:orderItemList){
-            sum += orderItem.getGiftIntegration()*orderItem.getProductQuantity();
-            return sum;
+        for (OmsOrderItem orderItem : orderItemList) {
+            sum += orderItem.getGiftIntegration() * orderItem.getProductQuantity();
+
         }
+            return sum;
+
 
     }
 
+    /**
+     * 计算订单应付金额
+     * @param omsOrder
+     * @return
+     */
     private BigDecimal calcPayAmount(OmsOrder omsOrder) {
+        //总金额+运费——促销优惠-优惠券优惠-积分抵扣
+        BigDecimal payAmount = omsOrder.getTotalAmount()
+                .add(omsOrder.getFreightAmount())
+                .subtract(omsOrder.getPromotionAmount())
+                .subtract(omsOrder.getCouponAmount())
+                .subtract(omsOrder.getIntegrationAmount());
+        return payAmount;
     }
 
     private BigDecimal calcIntegrationAmount(List<OmsOrderItem> orderItemList) {
