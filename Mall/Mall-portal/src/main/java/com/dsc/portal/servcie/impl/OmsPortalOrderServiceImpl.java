@@ -309,11 +309,37 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         return payAmount;
     }
 
+    /**
+     * 计算订单优惠券金额
+     * @param orderItemList
+     * @return
+     */
     private BigDecimal calcIntegrationAmount(List<OmsOrderItem> orderItemList) {
-    }
 
+        BigDecimal integrationAmount = new BigDecimal(0);
+        for (OmsOrderItem orderItem : orderItemList){
+            if (orderItem.getIntegrationAmount() != null) {
+                integrationAmount = integrationAmount.add(orderItem.getIntegrationAmount().multiply(new BigDecimal(orderItem.getProductQuantity())));
+            }
+        }
+        return integrationAmount;
+        }
+
+    /**
+     * 计算订单优惠券金额
+     * @param orderItemList
+     * @return
+     */
     private BigDecimal calcCouponAmount(List<OmsOrderItem> orderItemList) {
-    }
+
+        BigDecimal couponAmount = new BigDecimal(0);
+        for (OmsOrderItem orderItem :orderItemList){
+            if (orderItem.getCouponAmount()!=null){
+                couponAmount = couponAmount.add(orderItem.getCouponAmount().multiply(new BigDecimal(orderItem.getProductQuantity())));
+            }
+        }
+        return couponAmount;
+            }
 
     private String getOrderPromotionInfo(List<OmsOrderItem> orderItemList) {
     }
