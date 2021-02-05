@@ -341,7 +341,23 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         return couponAmount;
             }
 
+    /**
+     * 获取订单促销的信息
+     * @param orderItemList
+     * @return
+     */
     private String getOrderPromotionInfo(List<OmsOrderItem> orderItemList) {
+
+        StringBuilder sb = new StringBuilder();
+        for (OmsOrderItem orderItem:orderItemList){
+            sb.append(orderItem.getPromotionName());
+            sb.append(";");
+        }
+        String result = sb.toString();
+        if (result.endsWith(";")){
+            result = result.substring(0,result.length()-1);
+        }
+         return  result;
     }
 
     private BigDecimal calcPromotionAmount(List<OmsOrderItem> orderItemList) {
