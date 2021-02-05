@@ -341,16 +341,73 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         return couponAmount;
             }
 
+    /**
+     * 获取订单促销的信息
+     * @param orderItemList
+     * @return
+     */
     private String getOrderPromotionInfo(List<OmsOrderItem> orderItemList) {
+
+        StringBuilder sb = new StringBuilder();
+        for (OmsOrderItem orderItem:orderItemList){
+            sb.append(orderItem.getPromotionName());
+            sb.append(";");
+        }
+        String result = sb.toString();
+        if (result.endsWith(";")){
+            result = result.substring(0,result.length()-1);
+        }
+         return  result;
     }
 
     private BigDecimal calcPromotionAmount(List<OmsOrderItem> orderItemList) {
-    }
+
+        BigDecimal promotionAmount = new BigDecimal(0);
+        for (OmsOrderItem orderItem:orderItemList){
+            if (orderItem.getPromotionAmount()!=null){
+                promotionAmount = promotionAmount.add(orderItem.getPromotionAmount().multiply(new BigDecimal(orderItem.getProductQuantity())));
+            }
+        }
+        return promotionAmount;
+        }
+
 
     private void lockStock(List<CartPromotionItem> cartPromotionItemList) {
     }
 
+    /**
+     * 获取可用积分抵扣金额
+     * @param useIntegration
+     * @param totalAmount
+     * @param currentMember
+     * @param b
+     * @return
+     */
     private BigDecimal getUseIntegrationAmount(Integer useIntegration, BigDecimal totalAmount, UmsMember currentMember, boolean b) {
+
+        BigDecimal zeroAmount = new BigDecimal(0);
+        //判断用户是否有这么多积分
+        if(useIntegration.compareTo(currentMember.getIntegration())>0){
+            return zeroAmount;
+        }
+        //根据积分使用规则判断是否可用
+        //是否可与优惠券共用
+        UmsIntegrationConsumeSetting integrationConsumeSetting = integrationConsumeSettingMapper.selectByPrimaryKey(1L);
+        if (hashCoupon && integrationConsumeSetting.getCouponStatus().equals(0)){
+            //不可与优惠券共用
+            return zeroAmount;
+        }
+        //是否达到最低使用积分门槛
+        if (useIntegration.compareTo(integrationConsumeSetting.getUseUnit()) < 0) {
+            return zeroAmount;
+        }
+        //是否超过订单抵用最高百分比
+        BigDecimal integrationAmount = new BigDecimal(useIntegration).divide(new BigDecimal(integrationConsumeSetting.getUseUnit()), 2, RoundingMode.HALF_EVEN);
+        BigDecimal maxPercent = new BigDecimal(integrationConsumeSetting.getMaxPercentPerOrder()).divide(new BigDecimal(100), 2, RoundingMode.HALF_EVEN);
+        if (integrationAmount.compareTo(totalAmount.multiply(maxPercent)) > 0) {
+            return zeroAmount;
+        }
+        return integrationAmount;
     }
 
     private void handleRealAmount(List<OmsOrderItem> orderItemList) {
