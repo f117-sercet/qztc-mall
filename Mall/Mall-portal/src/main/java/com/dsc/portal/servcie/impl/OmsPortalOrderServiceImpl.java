@@ -410,7 +410,17 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         return integrationAmount;
     }
 
+
     private void handleRealAmount(List<OmsOrderItem> orderItemList) {
+
+        for (OmsOrderItem orderItem:orderItemList){
+            //原价-促销优惠-优惠券抵扣-积分抵扣
+            BigDecimal realAmount = orderItem.getProductPrice()
+                    .subtract(orderItem.getPromotionAmount())
+                    .subtract(orderItem.getCouponAmount())
+                    .subtract(orderItem.getIntegrationAmount());
+            orderItem.setRealAmount(realAmount);
+        }
     }
 
     private BigDecimal calcTotalAmount(List<OmsOrderItem> orderItemList) {
@@ -514,7 +524,28 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         }
     }
 
-    private void updateCouponStatus(Long couponId, Long memberId, int i) {
+    /**
+     * 将优惠券信息更改为指定状态
+     * @param couponId 优惠券id
+     * @param memberId 会员id
+     * @param useStatus 0->未使用; 1->已使用
+     */
+    private void updateCouponStatus(Long couponId, Long memberId, int useStatus) {
+
+        if (couponId == null) {
+            return;
+        }
+        //查询第一张优惠券
+        SmsCouponHistoryExample example = new SmsCouponHistoryExample();
+        example.createCriteria().andMemberIdEqualTo(memberId)
+                .andCouponIdEqualTo(couponId).andUseStatusEqualTo(useStatus == 0 ? 1 : 0);
+        List<SmsCouponHistory> couponHistoryList = couponHistoryMapper.selectByExample(example);
+        if (!CollectionUtils.isEmpty(couponHistoryList)) {
+            SmsCouponHistory couponHistory = couponHistoryList.get(0);
+            couponHistory.setUseTime(new Date());
+            couponHistory.setUseStatus(useStatus);
+            couponHistoryMapper.updateByPrimaryKeySelective(couponHistory);
+        }
     }
 
     @Override
