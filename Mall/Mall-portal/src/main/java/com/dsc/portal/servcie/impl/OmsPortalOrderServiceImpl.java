@@ -423,10 +423,65 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         }
     }
 
+    /**
+     * 计算总金额
+     * @param orderItemList
+     * @return
+     */
     private BigDecimal calcTotalAmount(List<OmsOrderItem> orderItemList) {
+
+        BigDecimal totalAmount = new BigDecimal(0);
+        for (OmsOrderItem item:orderItemList){
+            totalAmount = totalAmount.add(item.getProductPrice().multiply(new BigDecimal(item.getProductQuantity())));
+        }
+        return totalAmount;
+        }
+
+    /**
+     * 对优惠券优惠进行处理
+     * @param orderItemList
+     * @param couponHistoryDetail
+     */
+    private void handleCouponAmount(List<OmsOrderItem> orderItemList, SmsCouponHistoryDetail couponHistoryDetail) {
+
+        SmsCoupon coupon = couponHistoryDetail.getCoupon();
+        if (coupon.getUseType().equals(0)){
+            //全场通用
+            calcPerCouponAmount(orderItemList, coupon);
+        } else if (coupon.getUseType().equals(1)) {
+            //指定分类
+            List<OmsOrderItem> couponOrderItemList = getCouponOrderItemByRelation(couponHistoryDetail, orderItemList, 0);
+            calcPerCouponAmount(couponOrderItemList, coupon);
+        } else if (coupon.getUseType().equals(2)) {
+            //指定商品
+            List<OmsOrderItem> couponOrderItemList = getCouponOrderItemByRelation(couponHistoryDetail, orderItemList, 1);
+            calcPerCouponAmount(couponOrderItemList, coupon);
+        }
     }
 
-    private void handleCouponAmount(List<OmsOrderItem> orderItemList, SmsCouponHistoryDetail couponHistoryDetail) {
+    /**
+     * 获取与优惠券有关系的下单商品
+     * @param couponHistoryDetail
+     * @param orderItemList
+     * @param i
+     * @return
+     */
+    private List<OmsOrderItem> getCouponOrderItemByRelation(SmsCouponHistoryDetail couponHistoryDetail, List<OmsOrderItem> orderItemList, int i) {
+    }
+
+    /**
+     * 对每个下单商品进行优惠券金额分摊的计算
+     * @param orderItemList
+     * @param coupon
+     */
+    private void calcPerCouponAmount(List<OmsOrderItem> orderItemList, SmsCoupon coupon) {
+
+        BigDecimal totalAmount = calcTotalAmount(orderItemList);
+        for (OmsOrderItem orderItem : orderItemList){
+            //(商品价格/可用商品总价)*优惠券面额
+            BigDecimal couponAmount = orderItem.getProductPrice().divide(totalAmount, 3, RoundingMode.HALF_EVEN).multiply(coupon.getAmount());
+            orderItem.setCouponAmount(couponAmount);
+        }
     }
 
     private SmsCouponHistoryDetail getUseCoupon(List<CartPromotionItem> cartPromotionItemList, Long couponId) {
