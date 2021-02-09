@@ -463,11 +463,40 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
      * 获取与优惠券有关系的下单商品
      * @param couponHistoryDetail
      * @param orderItemList
-     * @param i
+     * @param type 使用关系类型 0->相关分类; 1->指定商品
      * @return
      */
-    private List<OmsOrderItem> getCouponOrderItemByRelation(SmsCouponHistoryDetail couponHistoryDetail, List<OmsOrderItem> orderItemList, int i) {
-    }
+    private List<OmsOrderItem> getCouponOrderItemByRelation(SmsCouponHistoryDetail couponHistoryDetail, List<OmsOrderItem> orderItemList, int type) {
+
+        List<OmsOrderItem> result = new ArrayList<>();
+        if (type == 0) {
+            List<Long> categoryList = new ArrayList<>();
+            for (SmsCouponProductCategoryRelation productCategoryRelation : couponHistoryDetail.getCategoryRelationList()) {
+                categoryList.add(productCategoryRelation.getProductCategoryId());
+            }
+            for (OmsOrderItem orderItem : orderItemList) {
+                if (categoryList.contains(orderItem.getProductCategoryId())) {
+                    result.add(orderItem);
+                } else {
+                    orderItem.setCouponAmount(new BigDecimal(0));
+                }
+            }
+        }else if (type == 1) {
+            List<Long> productIdList = new ArrayList<>();
+            for (SmsCouponProductRelation productCategoryRelation : couponHistoryDetail.getProductRelationList()) {
+                productIdList.add(productCategoryRelation.getProductId());
+            }
+            for (OmsOrderItem orderItem : orderItemList) {
+                if (productIdList.contains(orderItem.getProductId())) {
+                    result.add(orderItem);
+                } else {
+                    orderItem.setCouponAmount(new BigDecimal(0));
+                }
+            }
+        }
+         return result;
+        }
+
 
     /**
      * 对每个下单商品进行优惠券金额分摊的计算
@@ -484,7 +513,21 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
         }
     }
 
+    /**
+     * 获取该用户可以使用的优惠券
+     * @param cartPromotionItemList
+     * @param couponId
+     * @return
+     */
     private SmsCouponHistoryDetail getUseCoupon(List<CartPromotionItem> cartPromotionItemList, Long couponId) {
+
+        List<SmsCouponHistoryDetail> couponHistoryDetailList = memberCouponService.listCart(cartPromotionItemList, 1);
+        for (SmsCouponHistoryDetail couponHistoryDetail : couponHistoryDetailList) {
+            if (couponHistoryDetail.getCoupon().getId().equals(couponId)) {
+                return couponHistoryDetail;
+            }
+        }
+        return null;
     }
 
     /**
