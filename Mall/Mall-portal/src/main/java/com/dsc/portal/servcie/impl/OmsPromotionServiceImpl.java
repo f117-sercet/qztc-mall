@@ -1,10 +1,13 @@
 package com.dsc.portal.servcie.impl;
 
 import com.dsc.mall.model.OmsCartItem;
+import com.dsc.mall.model.PmsSkuStock;
 import com.dsc.portal.dao.PortalProductDao;
 import com.dsc.portal.domain.CartPromotionItem;
 import com.dsc.portal.domain.PromotionProduct;
 import com.dsc.portal.servcie.OmsPromotionService;
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +35,38 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
         for (Map.Entry<Long,List<OmsCartItem>>entry:productCartMap.entrySet()){
             Long productId = entry.getKey();
             PromotionProduct promotionProduct = getPromotionProductById(productId,promotionProductList);
+            List<OmsCartItem> itemList = entry.getValue();
+            Integer promotionType = promotionProduct.getPromotionType();
+            if (promotionType == 1){
+                //单品促销
+                for(OmsCartItem item :itemList){
+                    CartPromotionItem cartPromotionItem = new CartPromotionItem();
+                    BeanUtils.copyProperties(item,cartPromotionItem);
+                    cartPromotionItem.setPromotionMessage("单品促销");
+                    //商品原价-促销价
+                    PmsSkuStock skuStock = getOriginalPrice(promotionProduct,item.getProductSkuId());
+
+                }
+            }
+
         }
 
+        return null;
+    }
+
+    /**
+     * 获取商品的原价
+     * @param promotionProduct
+     * @param productSkuId
+     * @return
+     */
+    private PmsSkuStock getOriginalPrice(PromotionProduct promotionProduct, Long productSkuId) {
+
+        for (PmsSkuStock skuStock:promotionProduct.getSkuStockList()){
+            if (productSkuId.equals(skuStock.getId())){
+                return skuStock;
+            }
+        }
         return null;
     }
 
