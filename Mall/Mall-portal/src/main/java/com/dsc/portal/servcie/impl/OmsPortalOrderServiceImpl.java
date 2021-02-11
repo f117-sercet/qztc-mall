@@ -16,6 +16,7 @@ import com.dsc.portal.servcie.*;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
@@ -28,6 +29,7 @@ import java.util.stream.Collectors;
  *前台会员管理Service
  * @author 60221
  */
+@Service
 public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
     @Autowired
     private UmsMemberService memberService;
@@ -383,7 +385,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderServcie {
      * @param b
      * @return
      */
-    private BigDecimal getUseIntegrationAmount(Integer useIntegration, BigDecimal totalAmount, UmsMember currentMember, boolean b) {
+    private BigDecimal getUseIntegrationAmount(Integer useIntegration, BigDecimal totalAmount, UmsMember currentMember, boolean hashCoupon) {
 
         BigDecimal zeroAmount = new BigDecimal(0);
         //判断用户是否有这么多积分
