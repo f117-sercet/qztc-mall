@@ -1,5 +1,6 @@
 package com.dsc.portal.servcie.impl;
 
+import com.dsc.mall.exception.Asserts;
 import com.dsc.mall.mapper.*;
 import com.dsc.mall.model.SmsCoupon;
 import com.dsc.mall.model.SmsCouponHistory;
@@ -13,6 +14,7 @@ import com.dsc.portal.servcie.UmsMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,6 +41,22 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
 
     @Override
     public void add(Long couponId) {
+        UmsMember currentMember = memberService.getCurrentMember();
+        //获取优惠券信息，判断数量
+        SmsCoupon coupon = couponMapper.selectByPrimaryKey(couponId);
+        if (coupon==null){
+            Asserts.fail("优惠券不存在");
+        }
+        if(coupon.getCount()<=0){
+            Asserts.fail("优惠券已经领完了");
+        }
+        Date now = new Date();
+        if(now.before(coupon.getEnableTime())){
+            Asserts.fail("优惠券还没到领取时间");
+        }
+        //判断用户领取的优惠券数量是否超过限制
+        SmsCouponHistoryExample couponHistoryExample = new SmsCouponHistoryExample();
+        couponHistoryExample.createCriteria().andCouponIdEqualTo(couponId).andMemberIdEqualTo(currentMember.getId());
 
     }
 
