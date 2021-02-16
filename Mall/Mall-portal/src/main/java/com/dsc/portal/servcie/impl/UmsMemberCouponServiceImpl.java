@@ -11,11 +11,13 @@ import com.dsc.portal.domain.CartPromotionItem;
 import com.dsc.portal.domain.SmsCouponHistoryDetail;
 import com.dsc.portal.servcie.UmsMemberCouponService;
 import com.dsc.portal.servcie.UmsMemberService;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 /**
  * 会员优惠券管理Service实现类
@@ -57,7 +59,49 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
         //判断用户领取的优惠券数量是否超过限制
         SmsCouponHistoryExample couponHistoryExample = new SmsCouponHistoryExample();
         couponHistoryExample.createCriteria().andCouponIdEqualTo(couponId).andMemberIdEqualTo(currentMember.getId());
+        Long count = couponHistoryMapper.countByExample(couponHistoryExample);
+        if (count>=coupon.getPerLimit()){
+            Asserts.fail("您已经领取过优惠券");
+        }
+        //生成领取优惠券历史
+        SmsCouponHistory couponHistory = new SmsCouponHistory();
+        couponHistory.setCouponId(couponId);
+        couponHistory.setCouponCode(generateCouponCode(currentMember.getId()));
+        couponHistory.setCreateTime(now);
+        couponHistory.setMemberId(currentMember.getId());
+        couponHistory.setMemberNickname(currentMember.getNickname());
+        //主动领取
+        couponHistory.setGetType(1);
+        //未使用
+        couponHistory.setUseStatus(0);
+        couponHistoryMapper.insert(couponHistory);
+        //修改优惠券表的数量、领取数量
+        coupon.setCount(coupon.getCount()-1);
+        coupon.setReceiveCount(coupon.getReceiveCount()==null?1:coupon.getReceiveCount()+1);
+        couponMapper.updateByPrimaryKey(coupon);
 
+    }
+
+    /**
+     * 16位优惠码生成：时间戳后8位+4位随机数+用户id后4位
+     * @param memberId
+     * @return
+     */
+    private String generateCouponCode(Long memberId) {
+        StringBuilder sb = new StringBuilder();
+        Long currentTimeMillis = System.currentTimeMillis();
+        String timeMillisStr = currentTimeMillis.toString();
+        sb.append(timeMillisStr.substring(timeMillisStr.length()-8));
+        for (int i=0;i<4;i++){
+            sb.append(new Random().nextInt(10));
+        }
+        String memberIdStr = memberId.toString();
+        if (memberIdStr.length() <= 4) {
+            sb.append(String.format("%04d", memberId));
+        } else {
+            sb.append(memberIdStr.substring(memberIdStr.length()-4));
+        }
+        return sb.toString();
     }
 
     @Override
