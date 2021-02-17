@@ -15,6 +15,7 @@ import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -118,6 +119,12 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
 
     @Override
     public List<SmsCouponHistoryDetail> listCart(List<CartPromotionItem> cartPromotionItemList, Integer type) {
+
+            UmsMember currentMember = memberService.getCurrentMember();
+            Date now = new Date();
+            //获取用户所有优惠券
+        List<SmsCouponHistoryDetail> enableList = new ArrayList<>();
+        List<SmsCouponHistoryDetail> diasbleList = new ArrayList<>();
         return null;
     }
 
