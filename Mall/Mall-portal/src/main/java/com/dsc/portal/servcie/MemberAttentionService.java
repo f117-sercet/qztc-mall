@@ -28,7 +28,7 @@ public interface MemberAttentionService {
      * @param pageSize
      * @return
      */
-    Page<MemberBrandAttention> lsit(Integer pageNum, Integer pageSize);
+    Page<MemberBrandAttention> list(Integer pageNum, Integer pageSize);
 
     /**
      * 获取用户关注详情
