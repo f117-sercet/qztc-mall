@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @author 60221
  */
 @Service
-public class MemberCollectionService implements MemberCollectionServcie {
+public class MemberCollectionServiceImpl implements MemberCollectionServcie {
 
     @Autowired
     private MemberProductCollectionRepository productCollectionRepository;

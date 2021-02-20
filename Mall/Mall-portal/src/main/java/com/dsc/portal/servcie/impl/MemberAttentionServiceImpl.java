@@ -22,7 +22,6 @@ public class MemberAttentionServiceImpl implements MemberAttentionService {
 
     @Autowired
     private MemberBrandAttentionRepository memberBrandAttentionRepository;
-
     @Autowired
     private UmsMemberService memberService;
 
@@ -30,8 +29,8 @@ public class MemberAttentionServiceImpl implements MemberAttentionService {
     public int add(MemberBrandAttention memberBrandAttention) {
         int count = 0;
         UmsMember member = memberService.getCurrentMember();
-        memberBrandAttention.setMemberNickname(member.getNickname());
         memberBrandAttention.setMemberId(member.getId());
+        memberBrandAttention.setMemberNickname(member.getNickname());
         memberBrandAttention.setMemberIcon(member.getIcon());
         memberBrandAttention.setCreateTime(new Date());
         MemberBrandAttention findAttention = memberBrandAttentionRepository.findByMemberIdAndBrandId(memberBrandAttention.getMemberId(), memberBrandAttention.getBrandId());
@@ -45,17 +44,15 @@ public class MemberAttentionServiceImpl implements MemberAttentionService {
     @Override
     public int delete(Long brandId) {
         UmsMember member = memberService.getCurrentMember();
-        return memberBrandAttentionRepository.deleteByMemberIdAndBrandId(member.getId(),brandId);
+        return memberBrandAttentionRepository.deleteByMemberIdAndBrandId(member.getId(), brandId);
     }
 
     @Override
-    public Page<MemberBrandAttention> lsit(Integer pageNum, Integer pageSize) {
-
+    public Page<MemberBrandAttention> list(Integer pageNum, Integer pageSize) {
         UmsMember member = memberService.getCurrentMember();
-        Pageable pageable = PageRequest.of(pageNum-1,pageSize);
-        return memberBrandAttentionRepository.findByMemberId(member.getId(),pageable);
+        Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
+        return memberBrandAttentionRepository.findByMemberId(member.getId(), pageable);
     }
-
 
     @Override
     public MemberBrandAttention detail(Long brandId) {
@@ -67,6 +64,5 @@ public class MemberAttentionServiceImpl implements MemberAttentionService {
     public void clear() {
         UmsMember member = memberService.getCurrentMember();
         memberBrandAttentionRepository.deleteAllByMemberId(member.getId());
-
     }
 }
