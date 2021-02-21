@@ -1,19 +1,23 @@
 package com.dsc.portal.controller;
 
+import cn.hutool.socket.nio.NioServer;
 import com.dsc.mall.api.CommonPage;
 import com.dsc.mall.api.CommonResult;
+import com.dsc.mall.security.annotation.CacheException;
 import com.dsc.portal.domain.MemberProductCollection;
 import com.dsc.portal.servcie.impl.MemberCollectionServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * 会员收藏管理Controller
  * @author 60221
  */
+@Controller
 @Api(tags = "MemberCollectionController", description = "会员收藏管理")
 @RequestMapping("/member/productCollection")
 public class MemberProductCollectionController {
@@ -66,4 +70,5 @@ public class MemberProductCollectionController {
         memberCollectionService.clear();
         return CommonResult.success(null);
     }
+
 }
