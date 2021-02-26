@@ -1,9 +1,6 @@
 package com.dsc.mall.security.config;
 
-import com.dsc.mall.security.component.DynamicAccessDecisionManager;
-import com.dsc.mall.security.component.DynamicSecurityFilter;
-import com.dsc.mall.security.component.DynamicSecurityMetadataSource;
-import com.dsc.mall.security.component.DynamicSecurityService;
+import com.dsc.mall.security.component.*;
 import com.dsc.mall.security.util.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;

@@ -1,5 +1,6 @@
 package com.dsc.mall.security.component;
 
+import com.dsc.mall.security.config.IgnoreUrlsConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.access.SecurityMetadataSource;
@@ -38,14 +39,14 @@ public class DynamicSecurityFilter extends AbstractSecurityInterceptor implement
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         FilterInvocation fi = new FilterInvocation(servletRequest, servletResponse, filterChain);
         //OPTIONS请求直接放行
-        if(request.getMethod().equals(HttpMethod.OPTIONS.toString())){
+        if (request.getMethod().equals(HttpMethod.OPTIONS.toString())) {
             fi.getChain().doFilter(fi.getRequest(), fi.getResponse());
             return;
         }
         //白名单请求直接放行
         PathMatcher pathMatcher = new AntPathMatcher();
         for (String path : ignoreUrlsConfig.getUrls()) {
-            if(pathMatcher.match(path,request.getRequestURI())){
+            if (pathMatcher.match(path, request.getRequestURI())) {
                 fi.getChain().doFilter(fi.getRequest(), fi.getResponse());
                 return;
             }
@@ -72,3 +73,4 @@ public class DynamicSecurityFilter extends AbstractSecurityInterceptor implement
     public SecurityMetadataSource obtainSecurityMetadataSource() {
         return dynamicSecurityMetadataSource;
     }
+}

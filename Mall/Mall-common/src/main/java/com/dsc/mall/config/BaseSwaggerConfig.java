@@ -19,7 +19,7 @@ import java.util.List;
  * @author 60221
  * Swagger基础配置
  */
-@EnableSwagger2
+
 public abstract class BaseSwaggerConfig {
 
     @Bean
