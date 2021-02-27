@@ -9,17 +9,14 @@ import com.dsc.portal.domain.CartPromotionItem;
 import com.dsc.portal.domain.SmsCouponHistoryDetail;
 import com.dsc.portal.servcie.UmsMemberCouponService;
 import com.dsc.portal.servcie.UmsMemberService;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-
 /**
  * 会员优惠券管理Service实现类
  * @author 60221

@@ -7,11 +7,13 @@ import com.dsc.mall.service.RedisService;
 import com.dsc.portal.servcie.UmsMemberCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 /**
  * 实现类
  * @author 60221
  */
+@Service
 public class UmsMemberCacheServiceImpl implements UmsMemberCacheService {
 
     @Autowired

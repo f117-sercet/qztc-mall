@@ -6,8 +6,6 @@ import com.dsc.mall.model.PmsProduct;
 import com.dsc.mall.model.SmsHomeAdvertise;
 import lombok.Getter;
 import lombok.Setter;
-import org.graalvm.compiler.hotspot.nodes.aot.PluginFactory_ResolveMethodAndLoadCountersStubCall;
-
 import java.util.List;
 
 /**
