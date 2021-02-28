@@ -1,6 +1,5 @@
 package com.dsc.mall.search.domain;
 
-import jdk.javadoc.internal.doclets.toolkit.SerializedFormWriter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.elasticsearch.annotations.Field;

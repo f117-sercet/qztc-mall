@@ -11,5 +11,36 @@
 
     <artifactId>Mall-admin</artifactId>
 
-
+<dependencies>
+    <dependency>
+        <groupId>org.example</groupId>
+        <artifactId>Mall-mbg</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+        <groupId>org.example</groupId>
+        <artifactId>Mall-security</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+        <groupId>com.aliyun.oss</groupId>
+        <artifactId>aliyun-sdk-oss</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.minio</groupId>
+        <artifactId>minio</artifactId>
+    </dependency>
+</dependencies>
+    <build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+   </build>
 </project>
