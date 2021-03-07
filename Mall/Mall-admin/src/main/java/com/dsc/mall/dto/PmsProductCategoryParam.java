@@ -1,6 +1,7 @@
 package com.dsc.mall.dto;
 
-import com.macro.mall.validator.FlagValidator;
+
+import com.dsc.mall.validator.FlagValidator;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,7 +12,7 @@ import java.util.List;
 
 /**
  * 添加更新产品分类的参数
- * Created by macro on 2018/4/26.
+ * Created by dsc on 2018/4/26.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
