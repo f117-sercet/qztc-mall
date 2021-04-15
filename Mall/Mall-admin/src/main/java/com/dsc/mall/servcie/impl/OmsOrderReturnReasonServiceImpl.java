@@ -2,8 +2,11 @@ package com.dsc.mall.servcie.impl;
 
 import com.dsc.mall.mapper.OmsOrderReturnReasonMapper;
 import com.dsc.mall.model.OmsOrderReturnReason;
+import com.dsc.mall.model.OmsOrderReturnReasonExample;
 import com.dsc.mall.servcie.OmsOrderReturnReasonService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
@@ -13,6 +16,7 @@ import java.util.List;
  * @Author:estic
  * @Date: 2021/4/14 22:10
  */
+@Service
 public class OmsOrderReturnReasonServiceImpl implements OmsOrderReturnReasonService {
 
     @Autowired
@@ -37,21 +41,34 @@ public class OmsOrderReturnReasonServiceImpl implements OmsOrderReturnReasonServ
 
     @Override
     public int delete(List<Long> ids) {
-        return 0;
+
+        OmsOrderReturnReasonExample example = new OmsOrderReturnReasonExample();
+        example.createCriteria().andIdIn(ids);
+        return returnReasonMapper.deleteByExample(example);
     }
 
     @Override
     public List<OmsOrderReturnReason> list(Integer pageSize, Integer pageNum) {
-        return null;
+        PageHelper.startPage(pageNum,pageSize);
+        OmsOrderReturnReasonExample example = new OmsOrderReturnReasonExample();
+        example.setOrderByClause("sort desc");
+        return returnReasonMapper.selectByExample(example);
     }
 
     @Override
     public int updateStatus(List<Long> ids, Integer status) {
-        return 0;
+        if(!status.equals(0)&&!status.equals(1)){
+            return 0;
+        }
+        OmsOrderReturnReason record = new OmsOrderReturnReason();
+        record.setStatus(status);
+        OmsOrderReturnReasonExample example = new OmsOrderReturnReasonExample();
+        example.createCriteria().andIdIn(ids);
+        return returnReasonMapper.updateByExampleSelective(record,example);
     }
 
     @Override
     public OmsOrderReturnReason getItem(Long id) {
-        return null;
+        return returnReasonMapper.selectByPrimaryKey(id);
     }
 }

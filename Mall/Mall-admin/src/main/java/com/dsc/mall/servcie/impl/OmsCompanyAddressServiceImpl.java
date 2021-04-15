@@ -6,6 +6,7 @@ import com.dsc.mall.model.OmsCompanyAddressExample;
 import com.dsc.mall.model.OmsOrderSetting;
 import com.dsc.mall.servcie.OmsCompanyAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
  * @Author:estic
  * @Date: 2021/4/11 21:39
  */
+@Service
 public class OmsCompanyAddressServiceImpl implements OmsCompanyAddressService {
 
     @Autowired
