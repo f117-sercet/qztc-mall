@@ -34,6 +34,14 @@ public interface PmsProductAttributeCategoryService {
     PmsProductAttributeCategory getItem(Long id);
 
     /**
+     *更新数据
+     * @param id
+     * @param name
+     * @return
+     */
+    public int update(Long id, String name);
+
+    /**
      * 分页查询属性分类
      * @param pageSize
      * @param pageNum
