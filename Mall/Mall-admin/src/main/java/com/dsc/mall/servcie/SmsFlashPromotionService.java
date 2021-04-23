@@ -27,6 +27,13 @@ public interface SmsFlashPromotionService {
     int update(Long id, SmsFlashPromotion flashPromotion);
 
     /**
+     * 删除单个活动
+     * @param id
+     * @return
+     */
+    int delete(Long id);
+
+    /**
      * 修改下线状态
      * @param id
      * @param status
