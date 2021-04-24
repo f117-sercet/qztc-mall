@@ -19,32 +19,24 @@ public interface SmsHomeRecommendSubjectService {
     @Transactional
     int create(List<SmsHomeRecommendSubject> recommendSubjectList);
 
+
     /**
-     * 批量删除推荐
-     * @param id
-     * @param sort
-     * @return
+     * 修改推荐排序
      */
     int updateSort(Long id, Integer sort);
 
+    /**
+     * 批量删除推荐
+     */
+    int delete(List<Long> ids);
 
     /**
      * 更新推荐状态
-     * @param ids
-     * @param recommendStatus
-     * @return
      */
     int updateRecommendStatus(List<Long> ids, Integer recommendStatus);
 
     /**
      * 分页查询推荐
-     * @param subjectName
-     * @param recommendStatus
-     * @param pageSize
-     * @param pageNum
-     * @return
      */
     List<SmsHomeRecommendSubject> list(String subjectName, Integer recommendStatus, Integer pageSize, Integer pageNum);
-
-
 }

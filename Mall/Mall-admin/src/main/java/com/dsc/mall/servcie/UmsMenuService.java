@@ -27,6 +27,13 @@ public interface UmsMenuService {
     int update(Long id,UmsMenu umsMenu);
 
     /**
+     * 获取项目
+     * @param id
+     * @return
+     */
+    UmsMenu getItem(Long id);
+
+    /**
      * 根据ID删除名单
       * @param id
      * @return
