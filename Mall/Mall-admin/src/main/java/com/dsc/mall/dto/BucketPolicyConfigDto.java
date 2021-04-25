@@ -13,6 +13,7 @@ import java.util.List;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@Builder
 public class BucketPolicyConfigDto {
 
     private String Version;
