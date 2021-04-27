@@ -16,7 +16,7 @@ public interface PmsBrandService {
      * 获取所有品牌
      * @return
      */
-    List<PmsBrand> lsitAllBrand();
+    List<PmsBrand> listAllBrand();
 
     /**
      * 创建品牌
