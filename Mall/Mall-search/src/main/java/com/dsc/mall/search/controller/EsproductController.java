@@ -2,7 +2,8 @@ package com.dsc.mall.search.controller;
 
 import com.dsc.mall.api.CommonPage;
 import com.dsc.mall.api.CommonResult;
-import com.dsc.mall.search.dao.EsProduct;
+import com.dsc.mall.search.dao.EsProductDao;
+import com.dsc.mall.search.domain.EsProduct;
 import com.dsc.mall.search.domain.EsProductRelatedInfo;
 import com.dsc.mall.search.service.EsProductService;
 import io.swagger.annotations.Api;
@@ -67,8 +68,8 @@ public class EsproductController {
     @RequestMapping(value = "/search/simple", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<EsProduct>> search(@RequestParam(required = false) String keyword,
-                                                      @RequestParam(required = false, defaultValue = "0") Integer pageNum,
-                                                      @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                                                         @RequestParam(required = false, defaultValue = "0") Integer pageNum,
+                                                         @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
         Page<EsProduct> esProductPage = esProductService.search(keyword, pageNum, pageSize);
         return CommonResult.success(CommonPage.restPage(esProductPage));
     }
@@ -79,11 +80,11 @@ public class EsproductController {
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<EsProduct>> search(@RequestParam(required = false) String keyword,
-                                                      @RequestParam(required = false) Long brandId,
-                                                      @RequestParam(required = false) Long productCategoryId,
-                                                      @RequestParam(required = false, defaultValue = "0") Integer pageNum,
-                                                      @RequestParam(required = false, defaultValue = "5") Integer pageSize,
-                                                      @RequestParam(required = false, defaultValue = "0") Integer sort) {
+                                                         @RequestParam(required = false) Long brandId,
+                                                         @RequestParam(required = false) Long productCategoryId,
+                                                         @RequestParam(required = false, defaultValue = "0") Integer pageNum,
+                                                         @RequestParam(required = false, defaultValue = "5") Integer pageSize,
+                                                         @RequestParam(required = false, defaultValue = "0") Integer sort) {
         Page<EsProduct> esProductPage = esProductService.search(keyword, brandId, productCategoryId, pageNum, pageSize, sort);
         return CommonResult.success(CommonPage.restPage(esProductPage));
     }
@@ -92,8 +93,8 @@ public class EsproductController {
     @RequestMapping(value = "/recommend/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<EsProduct>> recommend(@PathVariable Long id,
-                                                         @RequestParam(required = false, defaultValue = "0") Integer pageNum,
-                                                         @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                                                            @RequestParam(required = false, defaultValue = "0") Integer pageNum,
+                                                            @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
         Page<EsProduct> esProductPage = esProductService.recommend(id, pageNum, pageSize);
         return CommonResult.success(CommonPage.restPage(esProductPage));
     }

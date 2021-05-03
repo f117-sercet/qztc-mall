@@ -1,6 +1,7 @@
 package com.dsc.mall.search.service;
 
-import com.dsc.mall.search.dao.EsProduct;
+import com.dsc.mall.search.dao.EsProductDao;
+import com.dsc.mall.search.domain.EsProduct;
 import com.dsc.mall.search.domain.EsProductRelatedInfo;
 import org.springframework.data.domain.Page;
 
@@ -59,7 +60,7 @@ public interface EsProductService {
      * @param productCategoryId
      */
 
-    Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize,Integer sort);
+    Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize, Integer sort);
 
     /**
      * 根据商品id推荐相关商品
