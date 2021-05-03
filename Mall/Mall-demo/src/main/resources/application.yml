@@ -22,7 +22,7 @@ mybatis:
 logging:
   level:
     root: info
-    com.macro.mall: debug
+    com.dsc.mall: debug
 
 host:
   mall:

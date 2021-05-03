@@ -5,7 +5,6 @@ import com.dsc.mall.dto.OmsOrderDetail;
 import com.dsc.mall.dto.OmsOrderQueryParam;
 import com.dsc.mall.model.OmsOrder;
 import org.apache.ibatis.annotations.Param;
-import sun.jvm.hotspot.debugger.linux.sparc.LinuxSPARCThreadContext;
 
 import java.util.List;
 

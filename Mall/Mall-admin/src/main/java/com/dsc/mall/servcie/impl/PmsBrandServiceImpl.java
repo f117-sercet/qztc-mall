@@ -29,7 +29,7 @@ public class PmsBrandServiceImpl implements PmsBrandService {
 
 
     @Override
-    public List<PmsBrand> lsitAllBrand() {
+    public List<PmsBrand> listAllBrand() {
         return brandMapper.selectByExample(new PmsBrandExample());
 
     }
