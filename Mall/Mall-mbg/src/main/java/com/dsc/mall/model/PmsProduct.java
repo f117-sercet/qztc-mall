@@ -1,10 +1,12 @@
 package com.dsc.mall.model;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
 public class PmsProduct implements Serializable {
     private Long id;
 

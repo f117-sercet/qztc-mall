@@ -4,7 +4,11 @@ import com.dsc.mall.model.UmsMemberLevel;
 import com.dsc.mall.model.UmsMemberLevelExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+/**
+ * @author 60221
+ */
 public interface UmsMemberLevelMapper {
     long countByExample(UmsMemberLevelExample example);
 

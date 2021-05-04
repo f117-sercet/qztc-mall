@@ -11,7 +11,6 @@ import java.util.List;
  * 搜索商品管理自定义Dao
  * @Date: 2021/2/27 11:30
  */
-@Repository
 public interface EsProductDao {
     /**
      * 获取指定ID的搜索商品
