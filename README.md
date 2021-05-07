@@ -39,7 +39,7 @@ Axios|前端HTTP框架|https://github.com/axios/axios|
 |Lombok|	简化对象封装工具|	https://github.com/rzwitserloot/lombok|
 |Jenkins|	自动化部署工具|	https://github.com/jenkinsci/jenkins|
 ### 开发进度
-mall-protal在重新进行开发
+2021年5月7日  后端已经做完，并且调试完成
 
 
 
