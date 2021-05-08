@@ -40,6 +40,5 @@ Axios|前端HTTP框架|https://github.com/axios/axios|
 |Jenkins|	自动化部署工具|	https://github.com/jenkinsci/jenkins|
 ### 开发进度
 2021年5月7日  后端已经做完，并且调试完成
-
-
+2021年5月8日，前端框架搭建好，准备进行开发
 
