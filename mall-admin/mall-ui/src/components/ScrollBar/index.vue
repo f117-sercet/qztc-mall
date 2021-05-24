@@ -28,7 +28,7 @@ export default {
       } else {
         if ($containerHeight - delta < $wrapperHeight) {
           if (this.top < -($wrapperHeight - $containerHeight + delta)) {
-            this.top = this.top
+            this.top =this.top
           } else {
             this.top = Math.max(this.top + eventDelta, $containerHeight - $wrapperHeight - delta)
           }
